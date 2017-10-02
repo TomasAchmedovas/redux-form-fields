@@ -1,0 +1,35 @@
+{
+  "name": "reduxform-fields",
+  "version": "1.0.1",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomasAchmedovas/reduxform-fields.git"
+  },
+  "author": "Tomas Achmedovas <achmedovas.tomas@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomasAchmedovas/reduxform-fields/issues"
+  },
+  "homepage": "https://github.com/TomasAchmedovas/reduxform-fields#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "flow-bin": "^0.56.0"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux-form": "^7.0.4",
+    "react-color": "^2.13.8",
+    "react-select": "^1.0.0-rc.10"
+  }
+}
