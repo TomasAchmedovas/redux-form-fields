@@ -17,3 +17,9 @@
     type="text"
   />
 ```
+
+##
+
+Buy Me a Coffee
+
+You can donate bitcoins here: https://coingate.com/pay/coffee Thanks :)
