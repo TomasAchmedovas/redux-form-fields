@@ -11,8 +11,8 @@ const ColorField = (field: Object) => {
     }
   }
 
-  const labelSize = field.labelSize || 'col-sm-3'
-  const inputSize = field.inputSize || 'col-sm-9'
+  const labelSize = field.vertical ? '' : field.labelSize || 'col-sm-3'
+  const inputSize = field.vertical ? '' : field.inputSize || 'col-sm-9'
 
   return (
     <div

@@ -19,6 +19,9 @@ const ReactSelectField = (field: Object) => {
     }
   }
 
+  const labelSize = field.vertical ? '' : field.labelSize || 'col-sm-3'
+  const inputSize = field.vertical ? '' : field.inputSize || 'col-sm-9'
+
   return (
     <div
       className={
@@ -26,8 +29,9 @@ const ReactSelectField = (field: Object) => {
         (field.meta.touched && field.meta.error ? ' has-error' : '')
       }
     >
-      <label className="col-sm-3 control-label">{field.label}</label>
-      <div className="col-sm-9">
+      <label className={`${labelSize} control-label`}>{field.label}</label>
+
+      <div className={inputSize}>
         <Select
           {...field}
           onBlur={() => field.input.onBlur(field.input.value)}

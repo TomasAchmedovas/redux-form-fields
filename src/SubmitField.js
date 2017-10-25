@@ -8,7 +8,13 @@ const SubmitField = ({
   ...field
 }: Object) => (
   <div className="form-group">
-    <div className={field.block ? 'col-sm-12' : 'col-sm-9 col-sm-offset-3'}>
+    <div
+      className={
+        field.vertical
+          ? ''
+          : field.block ? 'col-sm-12' : 'col-sm-9 col-sm-offset-3'
+      }
+    >
       <button
         className={`btn btn-primary${field.block ? ' btn-block' : ''}`}
         disabled={disabled}

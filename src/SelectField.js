@@ -10,6 +10,9 @@ const SelectField = (field: Object) => {
     }
   }
 
+  const labelSize = field.vertical ? '' : field.labelSize || 'col-sm-3'
+  const inputSize = field.vertical ? '' : field.inputSize || 'col-sm-9'
+
   return (
     <div
       className={
@@ -17,12 +20,12 @@ const SelectField = (field: Object) => {
         (field.meta.touched && field.meta.error ? ' has-error' : '')
       }
     >
-      <label className="col-sm-3 control-label">
+      <label className={`${labelSize} control-label`}>
         {field.label}
         {field.required ? ' *' : null}
       </label>
 
-      <div className="col-sm-9">
+      <div className={inputSize}>
         <select
           {...field.input}
           className="form-control"
