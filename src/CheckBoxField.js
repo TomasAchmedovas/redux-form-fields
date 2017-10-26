@@ -33,7 +33,10 @@ const CheckBoxField = (field: Object) => {
       }
     >
       {field.checkboxStyle == INPUT_LIKE ? (
-        <label className={field.labelSize || 'col-sm-3'}>{field.label}</label>
+        <label className={field.labelSize || 'col-sm-3'}>
+          {field.label}
+          {field.required ? ' *' : null}
+        </label>
       ) : null}
 
       <div

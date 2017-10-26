@@ -29,7 +29,10 @@ const ReactSelectField = (field: Object) => {
         (field.meta.touched && field.meta.error ? ' has-error' : '')
       }
     >
-      <label className={`${labelSize} control-label`}>{field.label}</label>
+      <label className={`${labelSize} control-label`}>
+        {field.label}
+        {field.required ? ' *' : null}
+      </label>
 
       <div className={inputSize}>
         <Select

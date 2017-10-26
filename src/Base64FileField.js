@@ -64,7 +64,10 @@ const Base64FileField = (field: Object) => {
         (field.meta.touched && field.meta.error ? ' has-error' : '')
       }
     >
-      <label className="col-sm-3 control-label">{field.label}</label>
+      <label className="col-sm-3 control-label">
+        {field.label}
+        {field.required ? ' *' : null}
+      </label>
       <div className="col-sm-9">
         {renderPreview()}
 
