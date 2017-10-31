@@ -38,7 +38,6 @@ const ReactSelectField = (field: Object) => {
         <Select
           {...field}
           onBlur={() => field.input.onBlur(field.input.value)}
-          onChange={onChange}
           options={field.options}
           value={field.input.value || ''}
         />
