@@ -25,6 +25,13 @@ const CheckBoxField = (field: Object) => {
     />
   )
 
+  const labelSize = field.vertical ? '' : field.labelSize || 'col-sm-3'
+  const inputSize = field.vertical
+    ? ''
+    : field.inputSize || field.checkboxStyle == INPUT_LIKE
+      ? 'col-sm-9'
+      : 'col-sm-9 col-sm-offset-3'
+
   return (
     <div
       className={
@@ -33,19 +40,13 @@ const CheckBoxField = (field: Object) => {
       }
     >
       {field.checkboxStyle == INPUT_LIKE ? (
-        <label className={field.labelSize || 'col-sm-3'}>
+        <label className={labelSize}>
           {field.label}
           {field.required ? ' *' : null}
         </label>
       ) : null}
 
-      <div
-        className={
-          field.inputSize || field.checkboxStyle == INPUT_LIKE
-            ? 'col-sm-9'
-            : 'col-sm-9 col-sm-offset-3'
-        }
-      >
+      <div className={inputSize}>
         {field.checkboxStyle == INPUT_LIKE ? (
           inputTag
         ) : (
