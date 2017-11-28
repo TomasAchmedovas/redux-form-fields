@@ -20,6 +20,7 @@ const CheckBoxField = (field: Object) => {
     <input
       id={field.id}
       {...field.input}
+      disabled={field.disabled}
       onChange={handleChange}
       type={field.type}
     />
