@@ -22,6 +22,7 @@ const ButtonToolbarField = (field: Object) => {
             field.options.map(option => {
               return (
                 <Button
+                  {...field.input}
                   active={option.value == field.input.value}
                   bsStyle="default"
                   key={option.value}
