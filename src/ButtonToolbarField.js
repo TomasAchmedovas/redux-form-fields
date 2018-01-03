@@ -17,18 +17,20 @@ const ButtonToolbarField = (field: Object) => {
 
       <div className="col-sm-9">
         <ButtonToolbar>
-          {field.options.map(option => {
-            return (
-              <Button
-                active={option.value == field.input.value}
-                bsStyle="default"
-                key={option.value}
-                onClick={() => handleChange(option.value)}
-              >
-                {option.label}
-              </Button>
-            )
-          })}
+          {field.options &&
+            field.options.length > 0 &&
+            field.options.map(option => {
+              return (
+                <Button
+                  active={option.value == field.input.value}
+                  bsStyle="default"
+                  key={option.value}
+                  onClick={() => handleChange(option.value)}
+                >
+                  {option.label}
+                </Button>
+              )
+            })}
         </ButtonToolbar>
       </div>
     </div>
