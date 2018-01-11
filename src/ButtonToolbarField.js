@@ -4,12 +4,18 @@ import { ButtonToolbar, Button } from 'react-bootstrap'
 
 const ButtonToolbarField = (field: Object) => {
   const handleChange = value => {
-    field.input.onChange(value)
+    if (field.onSelect) {
+      field.onSelect(value)
+    }
 
     if (field.onChange) {
       field.onChange(value)
     }
-  }
+
+    if (field.input.onChange) {
+      field.input.onChange(value)
+    }
+  } 
 
   return (
     <div className="form-group">
