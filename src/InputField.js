@@ -58,7 +58,7 @@ const InputField = (field: Object) => {
           <span className="help-block">{field.helpBlock}</span>
         )}
         {field.meta.touched &&
-          !(field.hideError || field.hideErrorMessage)
+          !(field.hideError || field.hideErrorMessage) &&
           field.meta.error && (
             <span className="help-block">{field.meta.error}</span>
           )}
