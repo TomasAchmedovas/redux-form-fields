@@ -43,7 +43,7 @@ const InputField = (field: Object) => {
 
   return (
     <div
-      className={`form-group${field.meta.touched && field.meta.error
+      className={`form-group${field.meta.touched && field.meta.error && !field.hideError
         ? ' has-error'
         : ''}`}
     >
@@ -58,7 +58,7 @@ const InputField = (field: Object) => {
           <span className="help-block">{field.helpBlock}</span>
         )}
         {field.meta.touched &&
-          !field.hideErrors &&
+          !(field.hideError || field.hideErrorMessage)
           field.meta.error && (
             <span className="help-block">{field.meta.error}</span>
           )}
