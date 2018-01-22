@@ -26,7 +26,7 @@ const ReactSelectField = (field: Object) => {
     <div
       className={
         'form-group' +
-        (field.meta.touched && field.meta.error ? ' has-error' : '')
+        (field.meta.touched && field.meta.error && !field.hideError ? ' has-error' : '')
       }
     >
       <label className={`${labelSize} control-label`}>
@@ -47,6 +47,7 @@ const ReactSelectField = (field: Object) => {
           <span className="help-block">{field.helpBlock}</span>
         )}
         {field.meta.touched &&
+          !(field.hideError || field.hideErrorMessage) &&
           field.meta.error && (
             <span className="help-block">
               {field.meta.error.constructor === Array
