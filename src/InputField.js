@@ -1,4 +1,5 @@
 // @flow
+
 import React from 'react'
 
 const InputField = (field: Object) => {
@@ -43,9 +44,11 @@ const InputField = (field: Object) => {
 
   return (
     <div
-      className={`form-group${field.meta.touched && field.meta.error && !field.hideError
-        ? ' has-error'
-        : ''}`}
+      className={`form-group${
+        field.meta.touched && field.meta.error && !field.hideError
+          ? ' has-error'
+          : ''
+      }`}
     >
       <label className={`${labelSize} control-label`}>
         {field.label}
@@ -57,11 +60,28 @@ const InputField = (field: Object) => {
         {field.helpBlock && (
           <span className="help-block">{field.helpBlock}</span>
         )}
-        {field.meta.touched &&
-          !(field.hideError || field.hideErrorMessage) &&
-          field.meta.error && (
-            <span className="help-block">{field.meta.error}</span>
-          )}
+
+        <span className="help-block">
+          {(() => {
+            if (
+              field.meta.touched &&
+              !(field.hideError || field.hideErrorMessage) &&
+              field.meta.error
+            ) {
+              if (field.meta.error.constructor === Array) {
+                return (
+                  <ul>
+                    {field.meta.error.map((error, index) => {
+                      return <li key={index}>{error}</li>
+                    })}
+                  </ul>
+                )
+              } else {
+                return field.meta.error
+              }
+            }
+          })()}
+        </span>
       </div>
     </div>
   )
